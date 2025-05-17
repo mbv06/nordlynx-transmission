@@ -76,7 +76,7 @@ jobs:
       build-context: '.'
       tbt_version: "${{ needs.show_vars.outputs.tbt_versiond }}"
       tag: "edgd1er/nordlynx-transmission:dev"
-      ptf: "linux/amd64,linux/arm64,linux/arm/v7"
+      ptf: "linux/amd64"
       version: ${{ needs.show_vars.outputs.nversion }}
       twcv: ${{ needs.show_vars.outputs.twcv }}
       ticv: ${{ needs.show_vars.outputs.ticv }}

@@ -75,8 +75,8 @@ RUN if [[ -n ${aptcacher} ]]; then echo "Acquire::http::Proxy \"http://${aptcach
     gpg-wks-server gpgconf gpgsm libassuan0 libksba8 libnpth0 libreadline8 libsqlite3-0 lsb-base pinentry-curses; fi \
     && wget -nv -t10 -O /tmp/nordrepo.deb  "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn-release/nordvpn-release_1.0.0_all.deb" \
     && apt-get install -qqy --no-install-recommends /tmp/nordrepo.deb && apt-get update \
-    && apt-get install -qqy --no-install-recommends -y nordvpn="${VERSION}" \
-    #&& apt-get remove -y wget nordvpn-release \
+    && wget -nv -t10 -O /tmp/nordvpn.deb "https://ftp.gg3.net/pub/mirror/repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn_3.16.9_amd64.deb" \
+    && apt-get install -qqy --no-install-recommends /tmp/nordvpn.deb \
     && mkdir -p /run/nordvpn \
     #chmod a+x /app/*.sh  \
     && addgroup --system vpn && useradd -lNms /bin/bash -u "${NUID:-1000}" -G nordvpn,vpn nordclient \
