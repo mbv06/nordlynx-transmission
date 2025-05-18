@@ -42,7 +42,7 @@ if [[ -x ${SCRIPT} ]]; then
 fi
 
 # Add containerIp to RPC_WHITELIST if enabled and missing
-if [[ "true" == "${TRANSMISSION_RPC_WHITELIST_ENABLED:-false}" ]] && [[ ! ${TRANSMISSION_RPC_WHITELIST} =~ ${container_ip} ]]; then
+if [[ "true" == "${TRANSMISSION_RPC_WHITELIST_ENABLED}" ]] && [[ ! ${TRANSMISSION_RPC_WHITELIST} =~ ${container_ip} ]]; then
   dockerNet=$(echo ${container_ip} | grep -oP ".+\.")"*"
   log "Adding ${dockerNet} to TRANSMISSION_RPC_WHITELIST (${TRANSMISSION_RPC_WHITELIST})"
   export TRANSMISSION_RPC_WHITELIST=${TRANSMISSION_RPC_WHITELIST},${dockerNet}
