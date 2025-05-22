@@ -8,7 +8,7 @@ on:
         type: string
       version:
         required: false
-        default: "3.20.2"
+        default: "3.16.9"
         type: string
       tbt_version:
         required: true
@@ -27,7 +27,7 @@ on:
       ptf:
         required: false
         type: string
-        default: "linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6"
+        default: "linux/amd64"
 
 env:
   PUSHFLAG: ${{ github.ref == 'refs/heads/main' }}

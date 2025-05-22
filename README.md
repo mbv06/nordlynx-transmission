@@ -157,6 +157,7 @@ services:
       - DEBUG=
       - NORDVPN_LOGIN=<email> #Not required if using secrets
       - NORDVPN_PASS=<pass> #Not required if using secrets
+      - NORDVPN_VERSION=3.16.9 # to not update to newer version
       - TRANSMISSION_RPC_USERNAME=<username> # not required if using secrets
       - TRANSMISSION_RPC_PASSWORD=<password> # not required if using secrets
       #- TRANSMISSION_RPC_WHITELIST_ENABLED=true # optional, enables IP whitelist for RPC access
